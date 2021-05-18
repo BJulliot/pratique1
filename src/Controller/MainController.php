@@ -8,23 +8,26 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-
 class MainController extends AbstractController
 {
     /**
- * @Route("/", name="main_home")
- */
+     * @Route("/", name="main_home")
+     */
     public function home()
     {
-        die("COUCOU ! ");
+        return $this->render('main/home.html.twig');
     }
-
 
     /**
      * @Route("/test", name="main_test")
      */
     public function test()
     {
-        die("Ici c'est le teeeest ! ");
+        $username = "<h1>Bastien</h1>";
+        $serie = ["title" => "Code Quantum", "year" => 1990];
+        return $this->render('main/test.html.twig',[
+            "user" => $username,
+            "serie" => $serie
+        ]);
     }
 }
