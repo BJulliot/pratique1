@@ -49,7 +49,7 @@
     <div>Mon tableau : {{ colors|join('-') }}</div>
     <div>{{ "now"|date('Y-m-d') }}</div>
 
-    {# Affichage des variables du controller #}
+    {# Affichage des variables du controller
 
     <h3>Nom de l'utilisateur : {{ user }}</h3>
     <h3>Nom de l'utilisateur : {{ user|raw }}</h3>
@@ -60,6 +60,7 @@
         <p>{{ serie.title }}</p>
         <p>{{ serie.year }}</p>
     </div>
+    #}
 {% endblock %}
 
 {% block title %}
