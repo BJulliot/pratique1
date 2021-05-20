@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
     <link rel="icon" href="{{ asset('img/icon.png') }}">
+    {% block extrastyles %} {% endblock %}
     <title>{% block title %} Series {% endblock %}</title>
+
 </head>
 <body>
 

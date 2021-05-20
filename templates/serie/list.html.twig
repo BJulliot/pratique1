@@ -6,4 +6,30 @@
 
     <h2>List of series</h2>
 
+    <section class="series-list">
+
+        {% if currentPage > 1 %}
+            <a href="{{ path('serie_list',{'page' : currentPage - 1  } ) }}">Previous Page</a>
+        {% endif %}
+        {% if currentPage < maxPage %}
+            <a href="{{ path('serie_list',{'page' : currentPage + 1 } ) }}">Next Page</a>
+        {% endif %}
+        {% for serie in series %}
+
+            <article>
+                <a href="{{ path('serie_detail', {'id' : serie.id}) }}" title="View Serie's detail">
+                    <img src="{{ asset('img/posters/series/' ~ serie.poster) }}" alt="{{ serie.name }}">
+                </a>
+                {{ serie.name }}
+
+            </article>
+        {% else %}
+
+            <div>
+                No series ! Sorry !
+            </div>
+        {% endfor %}
+
+    </section>
+
 {% endblock %}
